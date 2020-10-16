@@ -26,11 +26,9 @@ app.get("/", function (req, res) {
 app.get("/khojo", function (req, res) {
     res.render("index");
 });
-
 app.get("/khojo/subjects", function (req, res) {
     res.render("subjects");
 });
-
 app.get("/khojo/teachers", function (req, res) {
     res.render("teachers");
 });
