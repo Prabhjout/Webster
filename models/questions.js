@@ -3,13 +3,17 @@ const mongoose = require('mongoose');
 var QuestionSchema = new mongoose.Schema({
     question: String,
     author: String,
-    answer: String,
-    comments: [
-        {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "Comment"
-        }
-    ]
+    subject: String,
+    description: String,
+    created: { type: Date, default: Date.now },
+    // comments: [
+    //     {
+    //         type: mongoose.Schema.Types.ObjectId,
+    //         ref: "Comment"
+    //     }
+    // ],
+    upVotes: Number,
+    downVotes: Number
 });
 
 module.exports = mongoose.model('Question', QuestionSchema);
