@@ -4,9 +4,10 @@ const mongoose = require("mongoose"),
 //Scema Setup
 const UserSchema = new mongoose.Schema({
     username: String,
-    password: String
-});
+    password: String,
+    isTeacher: { type: Boolean, default: false }
 
+});
 UserSchema.plugin(passportLocalMongoose);
 
 module.exports = mongoose.model('User', UserSchema);

@@ -9,6 +9,12 @@ var QuestionSchema = new mongoose.Schema({
         },
         username: String
     },
+    answer: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Answer"
+        }
+    ],
     subject: String,
     description: String,
     created: { type: Date, default: Date.now },
